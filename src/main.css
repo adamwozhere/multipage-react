@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.App {
+  background-color: whitesmoke;
+}
+
+.App.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:where(.App.dark-mode) {
+  color: orange;
+}
+
+.App.dark-mode nav a {
+  color: yellow;
+}

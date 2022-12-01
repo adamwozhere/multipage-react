@@ -4,13 +4,20 @@ import Layout from './layouts/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import { useState } from 'react';
+import './main.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  function toggleDarkMode() {
+    setDarkMode(!darkMode);
+  }
+
   return (
-    <div className="App">
+    <div className={`App${darkMode ? ' dark-mode' : ''}`}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout handleDarkMode={toggleDarkMode} />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
